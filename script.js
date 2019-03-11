@@ -1,13 +1,18 @@
 
+russianAlice = {
+    '32432432' : '000000',
+    'Как тебя зовут?' : 'Алиса',
+    'sddsfdsdds' : 'fdsdsdsfsd',
+}
 
-function answer(question) {
+obj = {
+    'I love you, Siri' : 'I know.',
+    'Sing me a song.' : 'You know I can’t sing.',
+    'sad' : "asd",
+    'dsadsadsa' : "ccc",        
+}
 
-    obj = {
-        'I love you, Siri' : 'I know.',
-        'Sing me a song.' : 'You know I can’t sing.',
-        'sad' : "asd",
-        'dsadsadsa' : "ccc",        
-    }        
+function answer(question, obj) {           
     
     let x = Object.keys(obj);  
     var y = 0;
@@ -20,7 +25,6 @@ function answer(question) {
     if(y == 0){
         console.log('I don\'t know what to answer');        
     }
-
 }
 
-answer('dsadsssssadsa');
+answer('Как тебя зовут?', russianAlice);
