@@ -1,34 +1,52 @@
 
 russianAlice = {
-    '32432432' : '000000',
+    'Как дела?' : 'норм',
     'Как тебя зовут?' : 'Алиса',
-    'sddsfdsdds' : 'fdsdsdsfsd',
+    'Как погода' : 'солнце',
+
+    assistantDontKnow : {
+        1 : 'возможно',
+        2 : 'хз',
+        3 : 'Спроси позже',
+        4 : 'Я не знаю',
+    }
 }
-obj = {
+
+englishSiri = {
     'I love you, Siri' : 'I know.',
     'Sing me a song.' : 'You know I can’t sing.',
     'sad' : "asd",
-    'dsadsadsa' : "ccc",        
-}
+    'dsadsadsa' : "ccc", 
 
-function answer(question, obj) {     
-    assistantDontKnow = {
+    assistantDontKnow : {
         1 : 'I don\'t know what to answer',
         2 : 'Ask me later',
         3 : 'May be',
-        4 : 'Я не знаю',
-    }    
-    let x = Object.keys(obj);  
-    var y = 0;
+        4 : 'I dont know',
+    }       
+}
+
+var y = 0;
+function answer(question, obj) {     
+        
+    let x = Object.keys(obj);    
+    
+    if(y == 2){
+        console.log(obj.assistantDontKnow[Math.floor(Math.random()*4+1)]);                        
+    } else {
+
     for (let i = 0; i < x.length; i++) {
         if (question == x[i]){
            console.log(obj[x[i]]);
-           var y = 1;                                   
+           y = 1;                                   
         }             
-    }
+    } }
+
     if(y == 0){
-        console.log(assistantDontKnow[Math.floor(Math.random()*4+1)]);                        
+        console.log(obj.assistantDontKnow[Math.floor(Math.random()*4+1)]);                        
     }
+    y = 2;
 }
 
-answer('Как тебя222 зовут?', russianAlice);
+answer('Как дела?', russianAlice);
+answer('Как дела?', russianAlice);
